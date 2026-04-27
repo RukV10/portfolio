@@ -857,10 +857,163 @@ h1, h2, h3, h4 {
     color: #666666;
 }
 
-/* Responsive */
+/* =================== RESPONSIVE DESIGN =================== */
+
+/* --- TABLET (max 1024px) --- */
 @media (max-width: 1024px) {
-    .about-container { flex-direction: column; }
-    .projects-grid { grid-template-columns: 1fr; gap: 80px; }
-    .hero { flex-direction: column; height: auto; }
-    .hero-left, .hero-right { width: 100%; padding: 40px var(--padding-sides); }
+
+    /* Hero */
+    .hero-tl, .hero-tr { font-size: 0.55rem; }
+    .hero-tl { top: 25px; left: 25px; }
+    .hero-tr { top: 25px; right: 25px; }
+    .hero-corner { letter-spacing: 1.5px; }
+    .hero-black-banner { height: 32vh; padding-left: 6vw; }
+    .hero-title-group h1 { font-size: 1.5rem; }
+    .hero-title-group .subtitle { font-size: 0.95rem; }
+    .hero-name h2 { font-size: 1.5rem; }
+    .hero-divider-vertical { margin: 0 35px; }
+    .nav-links a { font-size: 0.9rem; }
+    .hero-bl { bottom: 30px; left: 25px; }
+    .hero-br { bottom: 30px; right: 25px; }
+
+    /* About */
+    .about-content { flex-direction: column; gap: 40px; padding: 60px 6vw; }
+    .about-left, .about-middle { flex: none; width: 100%; }
+    .about-img { height: 300px; }
+    .about-heading { font-size: 2.5rem; }
+    .about-subheading { font-size: 1.4rem; }
+    .skills-row { gap: 40px; }
+
+    /* Projects */
+    .projects-grid { grid-template-columns: 1fr; gap: 60px; }
+    .projects { padding: 80px 6vw; }
+
+    /* Detail View */
+    .detail-content { flex-direction: column; gap: 40px; }
+    .detail-container { padding: 60px 6vw; }
+    .detail-header h2 { font-size: 2.2rem; }
+
+    /* Contact */
+    .contact-container {
+        flex-direction: column;
+        padding: 60px 6vw;
+        gap: 50px;
+        justify-content: center;
+        height: auto;
+        min-height: 100vh;
+    }
+    .contact-left-col {
+        padding-top: 0;
+        padding-bottom: 0;
+        align-self: auto;
+    }
+    .contact-right-col { justify-content: flex-start; }
+    .lets-text { font-size: 4.5rem; }
+    .contact-label { font-size: 3rem; }
+    .connect-text { font-size: 4.5rem; }
+    .contact-subtitle { font-size: 1.1rem; }
+    .contact-car-wrapper { display: none; }
+    .form-card { padding: 40px 30px; max-width: 100%; }
+}
+
+/* --- MOBILE (max 768px) --- */
+@media (max-width: 768px) {
+
+    /* Global */
+    body { overflow-x: hidden; }
+    html { scroll-snap-type: none; } /* Disable snap on mobile for better UX */
+
+    /* Hero Section */
+    .hero-corner { font-size: 0.5rem; letter-spacing: 1px; }
+    .hero-tl { top: 20px; left: 15px; gap: 8px; }
+    .hero-tl .crosshair { display: none; }
+    .hero-tr { top: 20px; right: 15px; }
+    .hero-tr span:not(:first-child) { display: none; } /* Show only first line on mobile */
+    .hero-bl { bottom: 20px; left: 15px; gap: 10px; }
+    .hero-br { bottom: 20px; right: 15px; }
+    .bracket-bl, .bracket-br, .scroll-line { display: none; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 0.85rem; }
+
+    /* Hero Banner */
+    .hero-black-banner {
+        height: 30vh;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .banner-content-wrapper { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .hero-divider-vertical { display: none; }
+    .hero-title-group h1 { font-size: 1.2rem; letter-spacing: 0.5px; }
+    .hero-title-group .subtitle { font-size: 0.8rem; }
+    .hero-name h2 { font-size: 1.2rem; }
+
+    /* About Section */
+    .about { height: auto; min-height: 100vh; }
+    .about-content { flex-direction: column; padding: 50px 5vw; gap: 30px; }
+    .about-heading { font-size: 2rem; }
+    .about-subheading { font-size: 1.2rem; }
+    .about-subtitle { font-size: 0.9rem; margin-bottom: 30px; max-width: 100%; }
+    .quote { font-size: 1.1rem; margin-bottom: 25px; }
+    .intro { font-size: 0.9rem; margin-bottom: 30px; max-width: 100%; }
+    .about-img { height: 250px; }
+    .skills-row { flex-direction: column; gap: 30px; }
+    .block-title { font-size: 1rem; }
+    .software-list li, .skills-list li { font-size: 0.9rem; }
+
+    /* Projects Section */
+    .projects { padding: 60px 5vw; }
+    .projects-grid { grid-template-columns: 1fr; gap: 50px; }
+    .meta-left h3 { font-size: 1.15rem; }
+    .meta-left p { font-size: 0.85rem; }
+    .projects-header h2 { font-size: 1.2rem; }
+
+    /* Project Detail View */
+    .detail-container { padding: 40px 5vw; }
+    .back-btn { font-size: 0.8rem; margin-bottom: 25px; }
+    .detail-hero { max-height: 50vh; }
+    .detail-header h2 { font-size: 1.8rem; }
+    .detail-content { flex-direction: column; gap: 30px; }
+    .detail-desc { font-size: 1rem; }
+    .meta-label { font-size: 0.65rem; }
+    .meta-value { font-size: 0.9rem; }
+
+    /* Contact Section */
+    .contact-page { height: auto; min-height: 100vh; padding: 60px 0; }
+    .contact-container {
+        flex-direction: column;
+        padding: 50px 5vw;
+        gap: 40px;
+        height: auto;
+    }
+    .contact-left-col {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .contact-heading-group { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .lets-text { font-size: 3.5rem; }
+    .contact-label { font-size: 2.2rem; margin-bottom: -8px; }
+    .connect-text { font-size: 3.5rem; }
+    .contact-subtitle { font-size: 0.95rem; }
+    .contact-info-list p { font-size: 0.9rem; }
+    .contact-info-list svg { width: 16px; height: 16px; }
+    .contact-car-wrapper { display: none; }
+    .form-card { padding: 30px 20px; max-width: 100%; }
+    .form-title { font-size: 1.4rem; margin-bottom: 25px; }
+    .contact-form { gap: 25px; }
+    .input-group input, .input-group textarea { font-size: 0.9rem; }
+    .submit-btn { padding: 15px; font-size: 0.95rem; }
+    .contact-base { bottom: 20px; font-size: 0.75rem; }
+}
+
+/* --- SMALL MOBILE (max 480px) --- */
+@media (max-width: 480px) {
+    .hero-title-group h1 { font-size: 1rem; }
+    .hero-name h2 { font-size: 1rem; }
+    .hero-tr { display: none; } /* Hide technical data on very small screens */
+    .hero-black-banner { height: 28vh; }
+    .about-heading { font-size: 1.7rem; }
+    .lets-text, .connect-text { font-size: 3rem; }
+    .contact-label { font-size: 1.9rem; }
+    .form-card { padding: 25px 15px; }
+    .detail-header h2 { font-size: 1.5rem; }
 }
