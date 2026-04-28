@@ -240,13 +240,11 @@ h1, h2, h3, h4 {
 
 .about-content {
     display: flex;
-    gap: 60px;
-    width: 100%;
-    max-width: 100vw;
-    overflow: hidden; /* Prevent right-side overflow onto background */
+    gap: 40px;
+    width: 65vw; /* Restrict width to left side to prevent overlap with background sketch */
+    max-width: 1100px;
     margin: 0;
     padding-left: 8vw;
-    padding-right: 4vw;
 }
 
 .about-left {
@@ -380,7 +378,7 @@ h1, h2, h3, h4 {
 /* ------------------- PROJECTS SECTION ------------------- */
 .projects {
     min-height: 100vh;
-    padding: var(--section-padding) var(--padding-sides);
+    padding: 60px var(--padding-sides); /* Fixed padding to ensure left and right space */
     background-color: var(--bg-white);
     display: flex;
     flex-direction: column;
@@ -863,12 +861,12 @@ h1, h2, h3, h4 {
 
 /* =================== RESPONSIVE DESIGN =================== */
 
-/* Globally prevent horizontal overflow on all screen sizes */
-html, body { overflow-x: hidden; max-width: 100vw; }
+/* Globally prevent horizontal overflow on all screen sizes (on body only so scroll-snap isn't broken) */
+body { overflow-x: hidden; max-width: 100vw; }
 
 /* --- LAPTOP (1025px - 1280px) --- */
 @media (max-width: 1280px) {
-    .about-content { padding-left: 6vw; padding-right: 4vw; gap: 40px; }
+    .about-content { width: 70vw; padding-left: 6vw; padding-right: 0; gap: 30px; }
     .contact-container { padding-left: 6vw; padding-right: 6vw; gap: 40px; }
     .hero-black-banner { padding-left: 8vw; }
     .projects { padding: 80px 6vw; }
