@@ -879,13 +879,13 @@ h1, h2, h3, h4 {
     .cursor-img {
         width: 48px;
         height: 48px;
-        /* Custom sketched cursor arrow - WHITE (mix-blend-mode difference makes it black on white, white on black) */
-        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M2 2 L4 5' stroke-width='3' /%3E%3Cpath d='M6 8 L11 20 L15 32 L18 42 L21 34 L24 28 L31 29 L38 31 L32 25 L26 18 L15 8 Z' stroke-width='3' /%3E%3Cpath d='M5 9 L12 22 L17 40 L23 29 L36 32 L28 21 L13 7' stroke-width='1.5' opacity='0.8' /%3E%3Cpath d='M7 7 L14 28 L19 43 L22 27 L39 30 L24 15 Z' stroke-width='1' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+        /* Clean Industrial Drafting Cursor - WHITE (mix-blend-mode difference makes it black on white, white on black) */
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23fff' fill='none' stroke-linecap='square'%3E%3Cpath d='M 4.2 0 L 17.8 46' stroke-width='2' /%3E%3Cpath d='M 2 2.5 L 40 35.5' stroke-width='2' /%3E%3Cpath d='M 14 44 L 24 24' stroke-width='2' /%3E%3Cpath d='M 19 27 L 39 33' stroke-width='2' /%3E%3Cpath d='M 6 0 L 6 12' stroke-width='0.75' opacity='0.6' stroke-dasharray='1,2' /%3E%3Cpath d='M 0 6 L 12 6' stroke-width='0.75' opacity='0.6' stroke-dasharray='1,2' /%3E%3C/g%3E%3C/svg%3E");
         background-size: contain;
         background-repeat: no-repeat;
         transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease, background-image 0.2s ease;
-        transform-origin: 2px 2px; /* EXACT tip of the detached dot so it never shifts when scaled */
-        transform: translate(-2px, -2px); /* Align the tip point to the actual mouse coordinate */
+        transform-origin: 6px 6px; /* EXACT tip of the cursor intersection so it never shifts when scaled */
+        transform: translate(-6px, -6px); /* Align the tip point to the actual mouse coordinate */
     }
 
     .custom-cursor.hover {
@@ -894,10 +894,10 @@ h1, h2, h3, h4 {
     
     /* HOVER ORANGE mode */
     .custom-cursor.hover .cursor-img {
-        transform: translate(-2px, -2px) rotate(-10deg) scale(1.3);
+        transform: translate(-6px, -6px) rotate(-10deg) scale(1.3);
         filter: drop-shadow(0px 0px 8px rgba(242, 101, 34, 0.6));
-        /* Animated jitter / boiling state, slightly different coordinates, orange stroke */
-        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f26522' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M3 1 L5 6' stroke-width='3' /%3E%3Cpath d='M7 7 L12 21 L16 33 L17 41 L22 33 L25 29 L30 30 L39 30 L31 24 L27 19 L16 9 Z' stroke-width='3' /%3E%3Cpath d='M6 10 L11 23 L16 41 L24 28 L37 31 L27 20 L14 8' stroke-width='1.5' opacity='0.8' /%3E%3Cpath d='M8 8 L15 29 L18 42 L21 28 L38 29 L25 16 Z' stroke-width='1' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+        /* Energetic drafting state, slightly thicker with faint duplicate strokes */
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23f26522' fill='none' stroke-linecap='square'%3E%3Cpath d='M 4.2 0 L 17.8 46' stroke-width='2.5' /%3E%3Cpath d='M 2 2.5 L 40 35.5' stroke-width='2.5' /%3E%3Cpath d='M 14 44 L 24 24' stroke-width='2.5' /%3E%3Cpath d='M 19 27 L 39 33' stroke-width='2.5' /%3E%3Cpath d='M 5.2 0 L 18.8 46' stroke-width='1' opacity='0.5' /%3E%3Cpath d='M 2 3.5 L 40 36.5' stroke-width='1' opacity='0.5' /%3E%3Cpath d='M 6 0 L 6 14' stroke-width='1' opacity='0.8' stroke-dasharray='1,2' /%3E%3Cpath d='M 0 6 L 14 6' stroke-width='1' opacity='0.8' stroke-dasharray='1,2' /%3E%3C/g%3E%3C/svg%3E");
     }
 }
 
