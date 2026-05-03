@@ -163,3 +163,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 400);
     });
 });
+
+// Custom Cursor Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const customCursor = document.getElementById('custom-cursor');
+    if (customCursor) {
+        document.addEventListener('mousemove', (e) => {
+            customCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        // Add hover effect when mousing over interactive elements
+        const hoverSelectors = 'a, button, .project-card, input, textarea';
+        
+        // Use event delegation for dynamically loaded elements if any, or just bind directly
+        document.querySelectorAll(hoverSelectors).forEach(el => {
+            el.addEventListener('mouseenter', () => customCursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => customCursor.classList.remove('hover'));
+        });
+    }
+});
