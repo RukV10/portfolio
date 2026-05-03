@@ -170,10 +170,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (customCursor) {
         document.addEventListener('mousemove', (e) => {
             customCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            
+            // Periodically check if over a dark background
+            const el = document.elementFromPoint(e.clientX, e.clientY);
+            if (el && el.closest('.hero-black-banner, .contact-page, .form-card, .contact-container')) {
+                customCursor.classList.add('white-mode');
+            } else {
+                customCursor.classList.remove('white-mode');
+            }
         });
 
         // Add hover effect when mousing over interactive elements
-        const hoverSelectors = 'a, button, .project-card, input, textarea';
+        const hoverSelectors = 'a, button, .project-card, input, textarea, .back-btn, .resume-block';
         
         // Use event delegation for dynamically loaded elements if any, or just bind directly
         document.querySelectorAll(hoverSelectors).forEach(el => {
