@@ -170,14 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (customCursor) {
         document.addEventListener('mousemove', (e) => {
             customCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-            
-            // Periodically check if over a dark background
-            const el = document.elementFromPoint(e.clientX, e.clientY);
-            if (el && el.closest('.hero-black-banner, .contact-page, .form-card, .contact-container')) {
-                customCursor.classList.add('white-mode');
-            } else {
-                customCursor.classList.remove('white-mode');
-            }
         });
 
         // Add hover effect when mousing over interactive elements
